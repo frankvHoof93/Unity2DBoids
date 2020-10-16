@@ -1,6 +1,4 @@
 ﻿using nl.FutureWhiz.Unity2DBoids.Utils;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -34,6 +32,7 @@ namespace nl.FutureWhiz.Unity2DBoids.UserInput
         #region Public
         public Vector2? InputPosition()
         {
+            #region CheckForInput
             // Negate Previous Input
             if (isMouseDown)
             {
@@ -62,8 +61,10 @@ namespace nl.FutureWhiz.Unity2DBoids.UserInput
                 }
                 else if (Input.GetMouseButtonDown(0))
                     isMouseDown = !EventSystem.current.IsPointerOverGameObject(); // Negate Input if Press was on Canvas instead of Play-Area
-            }                
+            }
+            #endregion
 
+            #region HandleInput
             if (isMouseDown)
             {
                 if (!gameCamera)
@@ -85,6 +86,7 @@ namespace nl.FutureWhiz.Unity2DBoids.UserInput
                 return mousePos;
             }
             else return null;
+            #endregion
         }
         #endregion
 

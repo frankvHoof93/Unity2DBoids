@@ -241,14 +241,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 67
+  m_fontSize: 66.95
   m_fontSizeBase: 36.33
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 65535
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -679,10 +679,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4205328523681329815, guid: effbdc8ad8612484199bd7c135c362ce,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4541626976366900248, guid: effbdc8ad8612484199bd7c135c362ce,
         type: 3}
       propertyPath: m_Name
       value: slider_alignment
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012032924246833203, guid: effbdc8ad8612484199bd7c135c362ce,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012032924246833203, guid: effbdc8ad8612484199bd7c135c362ce,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000011444092
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012032924246833203, guid: effbdc8ad8612484199bd7c135c362ce,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6609780246208048339, guid: effbdc8ad8612484199bd7c135c362ce,
         type: 3}
@@ -697,7 +717,17 @@ PrefabInstance:
     - target: {fileID: 8405069608715214634, guid: effbdc8ad8612484199bd7c135c362ce,
         type: 3}
       propertyPath: m_textAlignment
-      value: 65535
+      value: 513
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405069608715214634, guid: effbdc8ad8612484199bd7c135c362ce,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 52.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405069608715214634, guid: effbdc8ad8612484199bd7c135c362ce,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8692074210795600742, guid: effbdc8ad8612484199bd7c135c362ce,
         type: 3}
@@ -765,6 +795,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: slider_separation
+      objectReference: {fileID: 0}
+    - target: {fileID: 457602067911113926, guid: 3c142d9848599b14eb6b60d08d39572c,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 578415562800236667, guid: 3c142d9848599b14eb6b60d08d39572c,
         type: 3}
@@ -919,12 +954,37 @@ PrefabInstance:
     - target: {fileID: 5233500439972041083, guid: 3c142d9848599b14eb6b60d08d39572c,
         type: 3}
       propertyPath: m_textAlignment
-      value: 65535
+      value: 513
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233500439972041083, guid: 3c142d9848599b14eb6b60d08d39572c,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 52.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233500439972041083, guid: 3c142d9848599b14eb6b60d08d39572c,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7475771661759505026, guid: 3c142d9848599b14eb6b60d08d39572c,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758304771297769058, guid: 3c142d9848599b14eb6b60d08d39572c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758304771297769058, guid: 3c142d9848599b14eb6b60d08d39572c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000011444092
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758304771297769058, guid: 3c142d9848599b14eb6b60d08d39572c,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c142d9848599b14eb6b60d08d39572c, type: 3}
@@ -957,6 +1017,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1900349463092974715, guid: 8559481896b99844687dc79861c5c64b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1900349463092974715, guid: 8559481896b99844687dc79861c5c64b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000011444092
+      objectReference: {fileID: 0}
+    - target: {fileID: 1900349463092974715, guid: 8559481896b99844687dc79861c5c64b,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2842131825424832302, guid: 8559481896b99844687dc79861c5c64b,
         type: 3}
@@ -1001,12 +1076,27 @@ PrefabInstance:
     - target: {fileID: 3131684962855514978, guid: 8559481896b99844687dc79861c5c64b,
         type: 3}
       propertyPath: m_textAlignment
-      value: 65535
+      value: 513
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131684962855514978, guid: 8559481896b99844687dc79861c5c64b,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 52.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131684962855514978, guid: 8559481896b99844687dc79861c5c64b,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6977814199135606864, guid: 8559481896b99844687dc79861c5c64b,
         type: 3}
       propertyPath: m_Name
       value: slider_coherence
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317611233973001951, guid: 8559481896b99844687dc79861c5c64b,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7769320609817373282, guid: 8559481896b99844687dc79861c5c64b,
         type: 3}
