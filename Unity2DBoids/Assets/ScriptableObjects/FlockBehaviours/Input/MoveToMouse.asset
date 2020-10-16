@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: MoveToMouse
   m_EditorClassIdentifier: 
   radius: 5
+  cameraTag: GameCamera

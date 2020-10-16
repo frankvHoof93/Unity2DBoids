@@ -1,4 +1,5 @@
 ﻿using nl.FutureWhiz.Unity2DBoids.Boids.Agents;
+using nl.FutureWhiz.Unity2DBoids.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -19,6 +20,13 @@ namespace nl.FutureWhiz.Unity2DBoids.Boids.FlockBehaviours.Input
         [SerializeField]
         [Tooltip("Radius around Mouse-Position to Stick to")]
         private float radius = 1.25f;
+        /// <summary>
+        /// Tag for GameCamera
+        /// </summary>
+        [SerializeField]
+        [TagSelector]
+        [Tooltip("Tag for GameCamera")]
+        private string cameraTag;
         #endregion
 
         #region Private
@@ -50,19 +58,21 @@ namespace nl.FutureWhiz.Unity2DBoids.Boids.FlockBehaviours.Input
             // Handle Input
             if (isMouseDown)
             {
+                Camera gameCamera = GameObject.FindGameObjectWithTag(cameraTag).GetComponent<Camera>();
+
                 Vector2? mousePos = null;
                 // Prioritise Touch
                 if (UnityEngine.Input.touchCount > 0)
                 {
                     // Get WorldPos from Touch
                     Touch touch = UnityEngine.Input.GetTouch(0);
-                    mousePos = (Vector2)Camera.main.ScreenToWorldPoint(touch.position);
+                    mousePos = (Vector2)gameCamera.ScreenToWorldPoint(touch.position);
                 }
                 // FallBack to Mouse
                 else if (UnityEngine.Input.GetMouseButton(0))
                 {
                     // Get WorldPos from Mouse
-                    mousePos = (Vector2)Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
+                    mousePos = (Vector2)gameCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
                 }
                 // No Pos (Should not be possible here)
                 if (!mousePos.HasValue)
