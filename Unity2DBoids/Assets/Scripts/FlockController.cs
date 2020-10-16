@@ -1,4 +1,5 @@
-﻿using System;
+﻿using nl.FvH.Library.Behaviours;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,8 +7,10 @@ using UnityEngine;
 /// <summary>
 /// FlockController is used to iterate through all rockets, 
 /// as the Unity LifeCycle's usage of reflection is far slower than manual iteration
+/// 
+/// Singleton for easy access
 /// </summary>
-public class FlockController : MonoBehaviour
+public class FlockController : SingletonBehaviour<FlockController>
 {
     #region Variables
     [SerializeField]
