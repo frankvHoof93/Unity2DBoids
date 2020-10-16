@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f6df73f869248439faf49360087653, type: 3}
   m_Name: MoveToMouse
   m_EditorClassIdentifier: 
-  radius: 5
-  cameraTag: GameCamera
+  radius: 3.5
