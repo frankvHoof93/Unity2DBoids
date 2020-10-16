@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137f1502bd96ebd41a46737ffab8a06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flockBehaviour: {fileID: 11400000, guid: 50f000c0ef68216419bed67d08336568, type: 2}
+  flockBehaviour: {fileID: 11400000, guid: cf6c8e0ae314b0b4da9b5add54c91828, type: 2}
   initialFlockSize: 50
   rocketPrefab: {fileID: 5289695488433490676, guid: 3af3239cf75d7ff4c82337ef47a4e65b,
     type: 3}

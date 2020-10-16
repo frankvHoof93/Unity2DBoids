@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Flock/Behaviour/Complex")]
+[CreateAssetMenu(menuName = "Flock/Behaviours/Complex")]
 public class ComplexFlockBehaviour : AFlockBehaviour
 {
     [SerializeField]

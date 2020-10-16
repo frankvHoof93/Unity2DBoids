@@ -1,0 +1,16 @@
+{
+    "name": "Unity2DBoidsEditorScripts",
+    "references": [
+        "GUID:56992e09e4fd27e4b9e049b8781d0307"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": []
+}
