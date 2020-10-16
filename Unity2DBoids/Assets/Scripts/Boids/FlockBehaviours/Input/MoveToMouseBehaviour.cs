@@ -41,30 +41,18 @@ namespace nl.FutureWhiz.Unity2DBoids.Boids.FlockBehaviours.Input
         /// <returns>Movement for Agent</returns>
         public override Vector2 CalculateMove(Rocket agent, List<Transform> neighbours, FlockController flock)
         {
-            // Negate Previous Input
-            if (isMouseDown && (UnityEngine.Input.GetMouseButtonUp(0) && UnityEngine.Input.touchCount == 0))
-                isMouseDown = false;
-            // Check for NEW Input
-            if (UnityEngine.Input.GetMouseButtonDown(0) || (UnityEngine.Input.touchCount > 0 && !isMouseDown))
-                isMouseDown = !EventSystem.current.IsPointerOverGameObject(); // Negate Input if Press was on Canvas instead of Play-Area
-
-            // Handle Input
-            if (isMouseDown)
-            {
-                Vector2? mousePos = InputController.Instance.InputPosition();
-                // No Pos (Should not be possible here)
-                if (!mousePos.HasValue)
-                    return Vector2.zero;
-                // Get Offset
-                Vector2 offset = mousePos.Value - (Vector2)agent.transform.position;
-                float t = offset.magnitude / radius;
-                // Leniency
-                if (t < 0.9f)
-                    return Vector2.zero;
-                // Return Vector to move to
-                return offset * (t * t);
-            }
-            else return Vector2.zero;
+            Vector2? mousePos = InputController.Instance.InputPosition();
+            // No Pos (Should not be possible here)
+            if (!mousePos.HasValue)
+                return Vector2.zero;
+            // Get Offset
+            Vector2 offset = mousePos.Value - (Vector2)agent.transform.position;
+            float t = offset.magnitude / radius;
+            // Leniency
+            if (t < 0.9f)
+                return Vector2.zero;
+            // Return Vector to move to
+            return offset * (t * t);
         }
         #endregion
         #endregion
