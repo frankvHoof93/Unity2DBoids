@@ -1,11 +1,12 @@
 ﻿using nl.FutureWhiz.Unity2DBoids.Boids.FlockBehaviours;
+using nl.FutureWhiz.Unity2DBoids.Editor.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace nl.FutureWhiz.Unity2DBoids.Editor
+namespace nl.FutureWhiz.Unity2DBoids.Editor.Inspectors
 {
     [CustomEditor(typeof(ComplexFlockBehaviour))]
     public class ComplexFlockBehaviourEditor : UnityEditor.Editor
