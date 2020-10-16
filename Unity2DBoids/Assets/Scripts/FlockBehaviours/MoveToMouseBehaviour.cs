@@ -8,14 +8,30 @@ public class MoveToMouseBehaviour : AFlockBehaviour
     [SerializeField]
     private float radius = 1.25f;
 
+    private bool isMouseDown;
+
+    void OnEnable()
+    {
+        isMouseDown = false;
+    }
+
+    void OnDisable()
+    {
+        isMouseDown = false;
+    }
+
     public override Vector2 CalculateMove(Rocket agent, List<Transform> neighbours, FlockController flock)
     {
-        // Check for Input
-        if (Input.GetMouseButton(0) || Input.touchCount > 0)
+        // Negate Previous Input
+        if (isMouseDown && (Input.GetMouseButtonUp(0) && Input.touchCount == 0))
+            isMouseDown = false;
+        // Check for NEW Input
+        if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && !isMouseDown))
+            isMouseDown = !EventSystem.current.IsPointerOverGameObject(); // Negate Input if Press was on Canvas instead of Play-Area
+
+        // Handle Input
+        if (isMouseDown)
         {
-            // Check if not using Canvas-UI
-            if (EventSystem.current.IsPointerOverGameObject())
-                return Vector2.zero; // Ignore Touch
             Vector2? mousePos = null;
             // Prioritise Touch
             if (Input.touchCount > 0)
