@@ -1,4 +1,5 @@
-﻿using nl.FvH.Library.Behaviours;
+﻿using Assets.Scripts.Utils;
+using nl.FvH.Library.Behaviours;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,16 +22,16 @@ public class MenuController : SingletonBehaviour<MenuController>
 
     public void SetAlignment(float value)
     {
-
+        FlockController.Instance.SetWeight(BoidType.Alignment, value);
     }
 
-    public void SetCoherence(float value)
+    public void SetCohesion(float value)
     {
-
+        FlockController.Instance.SetWeight(BoidType.Cohesion, value);
     }
 
     public void SetSeparation(float value)
     {
-
+        FlockController.Instance.SetWeight(BoidType.Separation, value);
     }
 }

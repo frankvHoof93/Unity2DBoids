@@ -1,4 +1,5 @@
-﻿using nl.FvH.Library.Behaviours;
+﻿using Assets.Scripts.Utils;
+using nl.FvH.Library.Behaviours;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,16 @@ public class FlockController : SingletonBehaviour<FlockController>
 
 
     #region Methods
+    #region Public
+    public void SetWeight(BoidType type, float weight)
+    {
+        if (flockBehaviour as ComplexFlockBehaviour != null)
+        {
+            ((ComplexFlockBehaviour)flockBehaviour).SetWeight(type, weight);
+        }
+    }
+    #endregion
+
     #region Unity
     // Start is called before the first frame update
     void Start()
