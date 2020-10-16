@@ -1,4 +1,6 @@
-﻿using nl.FutureWhiz.Unity2DBoids.Utils;
+﻿using nl.FutureWhiz.Unity2DBoids.Boids.Agents;
+using nl.FutureWhiz.Unity2DBoids.Boids.FlockBehaviours;
+using nl.FutureWhiz.Unity2DBoids.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 

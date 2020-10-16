@@ -1,4 +1,5 @@
-﻿using nl.FutureWhiz.Unity2DBoids.Utils;
+﻿using nl.FutureWhiz.Unity2DBoids.Boids;
+using nl.FutureWhiz.Unity2DBoids.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 

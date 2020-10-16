@@ -1,4 +1,7 @@
 ﻿using nl.FutureWhiz.Unity2DBoids.Boids.FlockBehaviours;
+using nl.FutureWhiz.Unity2DBoids.Boids.FlockBehaviours.Alignment;
+using nl.FutureWhiz.Unity2DBoids.Boids.FlockBehaviours.Coherence;
+using nl.FutureWhiz.Unity2DBoids.Boids.FlockBehaviours.Separation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
