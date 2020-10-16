@@ -35,11 +35,34 @@ namespace nl.FutureWhiz.Unity2DBoids.UserInput
         public Vector2? InputPosition()
         {
             // Negate Previous Input
-            if (isMouseDown && (Input.GetMouseButtonUp(0) || (!Input.GetMouseButton(0) && Input.touchCount == 0)))
-                isMouseDown = false;
+            if (isMouseDown)
+            {
+                if (Input.GetMouseButtonUp(0))
+                {
+                    isMouseDown = false;
+                    return null;
+                }
+                if (Input.touchSupported && Input.touchCount == 0)
+                {
+                    isMouseDown = false;
+                    return null;
+                }
+            }
             // Check for NEW Input
-            if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && !isMouseDown))
-                isMouseDown = !EventSystem.current.IsPointerOverGameObject(); // Negate Input if Press was on Canvas instead of Play-Area
+            if (!isMouseDown && (Input.GetMouseButtonDown(0) || Input.touchCount > 0))
+            {
+                if (Input.touchCount > 0)
+                {
+                    isMouseDown = true;
+                    for (int i = 0; i < Input.touchCount; i++) // IsPointerOverGameObject Bugs on Android if Touch.ID is not checked
+                    {
+                        Touch touch = Input.GetTouch(i);
+                        isMouseDown = isMouseDown && !EventSystem.current.IsPointerOverGameObject(touch.fingerId); // Negate Input if Press was on Canvas instead of Play-Area
+                    } // TODO: Code above still bugs on Android (on Release of Touch)
+                }
+                else if (Input.GetMouseButtonDown(0))
+                    isMouseDown = !EventSystem.current.IsPointerOverGameObject(); // Negate Input if Press was on Canvas instead of Play-Area
+            }                
 
             if (isMouseDown)
             {
