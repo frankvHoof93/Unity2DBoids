@@ -1,28 +1,32 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
 using System.Linq;
-using System;
+using UnityEditor;
+using UnityEngine;
 
 [CustomEditor(typeof(ComplexFlockBehaviour))]
 public class ComplexFlockBehaviourEditor : Editor
 {
+    /// <summary>
+    /// Behaviour being Added
+    /// </summary>
     private AFlockBehaviour adding;
 
     public override void OnInspectorGUI()
     {
         ComplexFlockBehaviour behaviour = (ComplexFlockBehaviour)target;
-
         // Use Reflection to keep private fields private (this is ok here since we are not at runtime)
         AFlockBehaviour[] behaviours = behaviour.GetField<AFlockBehaviour[]>("behaviours");
         float[] weights = behaviour.GetField<float[]>("weights");
-
+        #region NoBehaviours
         // No Behaviours, show warning
         if (behaviours == null || behaviours.Length == 0)
         {
             EditorGUILayout.HelpBox("No Behaviours Set", MessageType.Warning);
         }
+        #endregion
+
+        #region ShowBehaviours
         else
         {
             // Header
@@ -66,6 +70,9 @@ public class ComplexFlockBehaviourEditor : Editor
                 behaviour.SetField("weights", weights);
             }
         }
+        #endregion
+
+        #region AddBehaviour
         // Add Behaviour
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Add Behaviour");
@@ -88,6 +95,7 @@ public class ComplexFlockBehaviourEditor : Editor
             // Set through Reflection
             behaviour.SetField("behaviours", behavioursAfterAdd);
             behaviour.SetField("weights", weightsAfterAdd);
-        }        
+        }
+        #endregion
     }
 }
