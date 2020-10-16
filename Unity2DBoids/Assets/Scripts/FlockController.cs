@@ -51,6 +51,13 @@ public class FlockController : SingletonBehaviour<FlockController>
 
     #region Methods
     #region Public
+    public float GetWeight(BoidType type)
+    {
+        if (flockBehaviour as ComplexFlockBehaviour != null)
+            return ((ComplexFlockBehaviour)flockBehaviour).GetWeight(type);
+        return 0;
+    }
+
     public void SetWeight(BoidType type, float weight)
     {
         if (flockBehaviour as ComplexFlockBehaviour != null)

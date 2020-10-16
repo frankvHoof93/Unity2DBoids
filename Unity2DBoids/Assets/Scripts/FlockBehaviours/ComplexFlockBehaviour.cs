@@ -33,12 +33,15 @@ public class ComplexFlockBehaviour : AFlockBehaviour
     internal void SetWeight(BoidType type, float weight)
     {
         for (int i = 0; i < behaviours.Length; i++)
-        {
             if (type.IsClassOfType(behaviours[i]))
-            {
                 weights[i] = weight;
-                Debug.Log($"Set weight for {behaviours[i]} to {weight}");
-            }
-        }
+    }
+
+    internal float GetWeight(BoidType type)
+    {
+        for (int i = 0; i < behaviours.Length; i++)
+            if (type.IsClassOfType(behaviours[i]))
+                return weights[i];
+        return 0;
     }
 }

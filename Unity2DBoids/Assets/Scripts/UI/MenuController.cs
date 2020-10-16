@@ -18,6 +18,9 @@ public class MenuController : SingletonBehaviour<MenuController>
     private void Start()
     {
         // TODO: Set initial slider values
+        sld_alignment.value = FlockController.Instance.GetWeight(BoidType.Alignment);
+        sld_coherence.value = FlockController.Instance.GetWeight(BoidType.Cohesion);
+        sld_separation.value = FlockController.Instance.GetWeight(BoidType.Separation);
     }
 
     public void SetAlignment(float value)
