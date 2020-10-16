@@ -1,40 +1,76 @@
-﻿using Assets.Scripts.Utils;
-using nl.FvH.Library.Behaviours;
-using System.Collections;
-using System.Collections.Generic;
+﻿using nl.FutureWhiz.Unity2DBoids.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuController : SingletonBehaviour<MenuController>
+namespace nl.FutureWhiz.Unity2DBoids.UI
 {
-    [SerializeField]
-    private Slider sld_alignment;
-    [SerializeField]
-    private Slider sld_coherence;
-    [SerializeField]
-    private Slider sld_separation;
-
-
-    private void Start()
+    /// <summary>
+    /// Controller for 2D-UI (Canvas)
+    /// </summary>
+    public class MenuController : SingletonBehaviour<MenuController>
     {
-        // TODO: Set initial slider values
-        sld_alignment.value = FlockController.Instance.GetWeight(BoidType.Alignment);
-        sld_coherence.value = FlockController.Instance.GetWeight(BoidType.Cohesion);
-        sld_separation.value = FlockController.Instance.GetWeight(BoidType.Separation);
-    }
+        #region Variables
+        #region Editor
+        /// <summary>
+        /// UI-Slider for Alignment
+        /// </summary>
+        [SerializeField]
+        [Tooltip("UI-Slider for Alignment")]
+        private Slider sld_alignment;
+        /// <summary>
+        /// UI-Slider for Coherence
+        /// </summary>
+        [SerializeField]
+        [Tooltip("UI-Slider for Coherence")]
+        private Slider sld_coherence;
+        /// <summary>
+        /// UI-Slider for Separation
+        /// </summary>
+        [SerializeField]
+        [Tooltip("UI-Slider for Separation")]
+        private Slider sld_separation;
+        #endregion
+        #endregion
 
-    public void SetAlignment(float value)
-    {
-        FlockController.Instance.SetWeight(BoidType.Alignment, value);
-    }
+        #region Methods
+        #region Public
+        /// <summary>
+        /// Sets Alignment to FlockController based on Slider
+        /// </summary>
+        /// <param name="value">Value to Set</param>
+        public void SetAlignment(float value)
+        {
+            FlockController.Instance.SetWeight(BoidParamType.Alignment, value);
+        }
+        /// <summary>
+        /// Sets Cohesion to FlockController based on Slider
+        /// </summary>
+        /// <param name="value">Value to Set</param>
+        public void SetCohesion(float value)
+        {
+            FlockController.Instance.SetWeight(BoidParamType.Cohesion, value);
+        }
+        /// <summary>
+        /// Sets Separation to FlockController based on Slider
+        /// </summary>
+        /// <param name="value">Value to Set</param>
+        public void SetSeparation(float value)
+        {
+            FlockController.Instance.SetWeight(BoidParamType.Separation, value);
+        }
+        #endregion
 
-    public void SetCohesion(float value)
-    {
-        FlockController.Instance.SetWeight(BoidType.Cohesion, value);
-    }
-
-    public void SetSeparation(float value)
-    {
-        FlockController.Instance.SetWeight(BoidType.Separation, value);
+        #region Unity
+        /// <summary>
+        /// Sets initial slider values from current values in ScriptableObjects
+        /// </summary>
+        private void Start()
+        {
+            sld_alignment.value = FlockController.Instance.GetWeight(BoidParamType.Alignment);
+            sld_coherence.value = FlockController.Instance.GetWeight(BoidParamType.Cohesion);
+            sld_separation.value = FlockController.Instance.GetWeight(BoidParamType.Separation);
+        }
+        #endregion
+        #endregion
     }
 }

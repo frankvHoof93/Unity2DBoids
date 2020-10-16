@@ -3,13 +3,9 @@
 using UnityEngine;
 
 /// <summary>
-/// Behaviours are Scripts that use Unity-Methods (e.g. Update) 
-/// to perform basic functionality on a GameObject
-/// <para>
-///     COPYRIGHT: Frank van Hoof (2019)
-/// </para>
+/// Utils are small pieces of code that can be re-used throughout the Project
 /// </summary>
-namespace nl.FvH.Library.Behaviours
+namespace nl.FutureWhiz.Unity2DBoids.Utils
 {
     /// <summary>
     /// Turns any MonoBehaviour into a Singleton (Static Instance-Reference)
