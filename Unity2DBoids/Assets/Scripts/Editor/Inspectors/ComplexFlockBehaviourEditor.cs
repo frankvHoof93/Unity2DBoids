@@ -72,6 +72,7 @@ namespace nl.FutureWhiz.Unity2DBoids.Editor.Inspectors
                     // Set through Reflection
                     behaviour.SetField("behaviours", behaviours);
                     behaviour.SetField("weights", weights);
+                    EditorUtility.SetDirty(target);
                 }
             }
             #endregion
@@ -99,6 +100,7 @@ namespace nl.FutureWhiz.Unity2DBoids.Editor.Inspectors
                 // Set through Reflection
                 behaviour.SetField("behaviours", behavioursAfterAdd);
                 behaviour.SetField("weights", weightsAfterAdd);
+                EditorUtility.SetDirty(target);
             }
             #endregion
         }
